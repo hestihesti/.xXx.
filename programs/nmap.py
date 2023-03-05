@@ -9,16 +9,16 @@ def nm():
 		ques = input('Would You Like To Check Devices Connected To This IP Address <y/n>:\n> ')
 		if ques == 'n':
 			nmap1 = 'nmap -v -O -D RND:5 ' + q2
-			nmap2 = 'nmap -Pn -sV -p- ' + q2 ' --max-rtt-timeout=3000ms --min-rtt-timeout=500ms --defeat-rst-ratelimit --max-retries=3 --scan-delay 50ms --max-rate 3 --top-ports 1000 --version-intensity 5 -o ' + q2 + '.md'
+			nmap2 = 'nmap -O -Pn -sV -p- ' + q2 ' --max-rtt-timeout=3000ms --min-rtt-timeout=500ms --defeat-rst-ratelimit --max-retries=3 --scan-delay 50ms --max-rate 3 --top-ports 1000 --version-intensity 5 -o ' + q2 + '.md'
 			gnome = 'gnome-terminal -x ' + nmap1
 			gnome2 = 'gnome-terminal -x ' + nmap2
-			os.system(gnome)
+#			os.system(gnome)
 			os.system(gnome2)
 			print(colored('Results Were Saved As.. ' + q2 + '.xml', 'green'))
 		elif ques == 'y':
 			nmap1 = 'nmap -v -O -D RND:5 ' + q2 + '/24'
-			nmap2 = 'nmap -Pn -sV -p- ' + q2 '/24 --max-rtt-timeout=3000ms --min-rtt-timeout=500ms --defeat-rst-ratelimit --max-retries=3 --scan-delay 50ms --max-rate 3 --top-ports 1000 --version-intensity 5 -o ' + q2 + '.md'
-			gnome = 'gnome-terminal -x ' + nmap1
+			nmap2 = 'nmap -O -Pn -sV -p- ' + q2 '/24 --max-rtt-timeout=3000ms --min-rtt-timeout=500ms --defeat-rst-ratelimit --max-retries=3 --scan-delay 50ms --max-rate 3 --top-ports 1000 --version-intensity 5 -o ' + q2 + '.md'
+#			gnome = 'gnome-terminal -x ' + nmap1
 			gnome2 = 'gnome-terminal -x ' + nmap2
 			os.system(gnome)
 			os.system(gnome2)
@@ -31,10 +31,10 @@ def nm():
 		ques = input('Would You Like To Check The Devices Connected To Their Network:\n> ')
 		if ques == 'n':
 			nmap3 = 'nmap -v -O -D RND:5 ' + q4
-			nmap4 = 'nmap -v -sV --version-intensity 9 -D RND:7 -p7,19,20,21,22,23,25,37,53,69,79,80,110,111,135,137,138,139,445,161,443,512,513,514,1433,1434,1723,3389,8080 ' + q4 + ' -oX ' + q4 + '.xml'
+			nmap4 = 'nmap -O -Pn -sV -p- ' + q2 ' --max-rtt-timeout=3000ms --min-rtt-timeout=500ms --defeat-rst-ratelimit --max-retries=3 --scan-delay 50ms --max-rate 3 --top-ports 1000 --version-intensity 5 -o ' + q2 + '.md'
 			gnome3 = 'gnome-terminal -x ' + nmap3
 			gnome4 = 'gnome-terminal -x ' + nmap4
-			os.system(gnome3)
+#			os.system(gnome3)
 			os.system(gnome4)
 			print(colored('Results Were Saved As.. ' + q4 + '.xml', 'green'))
 		elif ques == 'y':
@@ -43,7 +43,7 @@ def nm():
 			gnome3 = 'gnome-terminal -x ' + nmap3
 			gnome4 = 'gnome-terminal -x ' + nmap4
 			os.system(gnome3)
-			os.system(gnome4)
+#			os.system(gnome4)
 			print(colored('Results Were Saved As.. ' + q4 + '.xml', 'green'))
 
 		else:
